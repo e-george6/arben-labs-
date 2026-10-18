@@ -5,62 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arben Labs | Quantitative Research Repository</title>
     <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-hover: #1e40af;
+            --accent: #2563eb;
+            --bg: #f8fafc;
+            --text: #0f172a;
+            --text-muted: #475569;
+            --border: #e2e8f0;
+        }
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            line-height: 1.6; 
-            max-width: 800px; 
-            margin: 40px auto; 
-            padding: 0 20px; 
-            color: #222; 
+            line-height: 1.7; 
+            max-width: 950px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            color: var(--text); 
+            background: #ffffff;
         }
-        h1 { 
-            font-size: 2.2rem; 
-            color: #0f172a; 
-            border-bottom: 2px solid #e2e8f0; 
-            padding-bottom: 10px; 
+        header {
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
-        h2 {
-            margin-top: 40px; /* Enhanced visual spacing */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .tagline { 
-            font-size: 1.1rem; 
-            color: #475569; 
-            margin-top: -10px; 
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--primary); }
+        .hero {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        h1 { font-size: 2.6rem; color: var(--primary); margin-top: 0; line-height: 1.2; }
+        h2 { font-size: 1.6rem; color: var(--primary); margin-top: 50px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        .tagline { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 25px; }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin: 30px 0;
         }
         .card { 
-            border: 1px solid #e2e8f0; 
+            border: 1px solid var(--border); 
             border-radius: 8px; 
-            padding: 20px; 
-            margin: 30px 0; /* Added more breathing room */
-            background: #f8fafc; 
+            padding: 25px; 
+            background: #ffffff; 
         }
+        ul { padding-left: 20px; color: var(--text-muted); }
+        li { margin-bottom: 10px; }
         .btn { 
             display: inline-block; 
-            background: #2563eb; 
+            background: var(--primary); 
             color: white; 
-            padding: 10px 18px; 
+            padding: 12px 24px; 
             text-decoration: none; 
             border-radius: 6px; 
-            font-weight: bold; 
+            font-weight: 600; 
             transition: background 0.2s ease;
         }
-        .btn:hover {
-            background: #1d4ed8; /* Darker blue on hover */
-            color: white;
+        .btn:hover { background: var(--primary-hover); }
+        .paper-card {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 20px 0;
+        }
+        footer {
+            margin-top: 80px;
+            border-top: 1px solid var(--border);
+            padding-top: 30px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <h1>Arben Labs</h1>
-    <p class="tagline">An open-access research repository dedicated to quantitative finance, risk modeling, and econometric validation under <strong>ArbEngine</strong>.</p>
-    
-    <div class="card">
-        <h2>Call for Papers: Issue #01</h2>
-        <p>We are accepting submissions from student researchers working in quantitative trading strategies, machine learning for time-series, and overfit-resistant backtesting frameworks.</p>
-        <a href="mailto:submissions@arbenlabs.com?subject=Submission:%20Issue%2001" class="btn">Submit Your Research</a>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">ARBEN LABS</a>
+            <nav>
+                <a href="#about">Mission</a>
+                <a href="#standards">Peer Review</a>
+                <a href="#papers">Repository</a>
+                <a href="#submit">Submit</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Quantitative Research Repository</h1>
+        <p class="tagline">An open-access institutional publication dedicated to rigorous student research in quantitative finance, econometric risk modeling, and backtest validation under <strong>ArbEngine</strong>.</p>
+        <a href="mailto:arbenginelabs@gmail.com?subject=Submission:%20Issue%2001" class="btn">Submit Research Paper</a>
     </div>
 
-    <h2>Published Works</h2>
-    <p><em>No papers published yet. Issue #01 coming soon.</em></p>
+    <section id="about">
+        <h2>Mission & Scope</h2>
+        <p>Most backtested quantitative strategies achieve extraordinary historical performance but suffer catastrophic failure under real-world distribution shifts, market friction, and regime changes. <strong>Arben Labs</strong> was founded to bridge the gap between empirical backtesting and statistical reality.</p>
+        <p>We provide a open platform for student researchers, independent quantitative developers, and undergraduate academics to publish reproducible, high-signal research in computational finance and econometric modeling.</p>
+    </section>
+
+    <div class="grid" id="standards">
+        <div class="card">
+            <h3>Focus Domains</h3>
+            <ul>
+                <li><strong>Quantitative Finance:</strong> Algorithmic execution, risk management, and market microstructure.</li>
+                <li><strong>Machine Learning:</strong> Time-series forecasting, non-stationary market modeling, and neural architectures.</li>
+                <li><strong>Econometric Validation:</strong> Probability of Backtest Overfitting (PBO) and Deflated Sharpe Ratio (DSR) protocols.</li>
+                <li><strong>Neuroeconomics:</strong> Interdisciplinary market behavior and cognitive decision models under uncertainty.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Peer Review & Editorial Standards</h3>
+            <ul>
+                <li><strong>Code Reproducibility:</strong> All submissions must include an open-source GitHub repository with clean Python/R code.</li>
+                <li><strong>Overfit Verification:</strong> Strategies are evaluated against data leaks, curve-fitting, and out-of-sample stress testing.</li>
+                <li><strong>Open Access:</strong> Authors retain full copyright under Creative Commons (CC BY 4.0) licensing.</li>
+                <li><strong>LaTeX Formatting:</strong> Papers must follow standardized academic typesetting guidelines.</li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="papers">
+        <h2>Published Repository</h2>
+        <div class="paper-card">
+            <h3>Issue #01 (Inaugural Volume) — Upcoming</h3>
+            <p>Submissions are currently open for our inaugural volume. We invite research papers detailing empirical methodology, quantitative software architecture, and econometric risk frameworks.</p>
+        </div>
+    </section>
+
+    <section id="submit" class="hero" style="margin-top: 50px;">
+        <h2>Call for Submissions</h2>
+        <p>Submit your manuscript draft (PDF format) alongside your GitHub repository link directly to our editorial board at <strong>arbenginelabs@gmail.com</strong>.</p>
+        <a href="mailto:arbenginelabs@gmail.com?subject=Submission:%20Issue%2001" class="btn">Send Manuscript</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Arben Labs. Operating globally under ArbEngine. Open Access Publication.</p>
+    </footer>
+
 </body>
 </html>
